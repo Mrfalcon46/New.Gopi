@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gopi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      *{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #ad939380;
+    font-family: 'Poppins', sans-serif;
+}
+#header{
+    width: 100%;
+    height: 100vh;
+    background-image: url(phots/FB_IMG_1547809755120.jpg);
+    background-size: cover;
+    background-position: center;
+}
+h1{
+    font-style: italic;
+}
+.container{
+  padding: 10px 10%;
+}
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+nav h1{
+  font-weight: 900;
+  font-style: italic;
+}
+.container ul{
+  display: flex;
+  list-style: none;
+}
+li a{
+  text-decoration: none;
+  margin: 10px;
+  color: black;
+  font-weight: 400;
+  position: relative;
+}
+nav ul li a::after{
+  content: '';
+  width: 0;
+  height: 3px;
+  background: #0f0f0f73;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.5s;
+}
+nav ul li a:hover:after{
+width: 100%;
+}
+.text{
+  margin-top: 20%;
+  font-size: 20px;
+}
+.text h1{
+  font-size: 60px;
+  margin-top: 20px;
+}
+.text h1 span{
+  color: #ff004f;
+  font-style: italic;
+  text-decoration: underline;
+}
+/*...........about......*/
+.about{
+  padding: 60px 0;
+  color: #0f0f0f73;
+}
+.col-1 img{
+  max-width: 370px;
+  height: auto;
+  border-radius: 15px;
+}
+.content{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.col-1{
+  flex-basis: 7%;
+}
+.col-2{
+  flex-basis: 60%;
+}
+.about{
+  font-size: 30px;
+  font-weight: 500;
+  color: black;
+  font-style: italic;
+}
+.title{
+  text-decoration:underline;
+}
+.title span{
+  color: #ff004f;
+}
+.tab-titles{
+  display: flex;
+  margin: 20px 0 40px;
+}
+.tab-links{
+  margin-right: 50px;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+}
+.tab-links::after{
+  content: '';
+  width: 0;
+  height: 3px;
+  background: #ff004f;
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  transition: 0.5s;
+}
+.tab-links.active-link::after{
+  width: 50%;
+}
+.tab-contents ul li{
+  list-style: none;
+  margin: 10px 0;
+  font-size: 27px;
+}
+.tab-contents ul li span{
+  font-size: 1.5rem;
+  color: #ff004f;
+  font-weight: 600;
+  text-decoration: underline;
+}
+.tab-contents{
+  display: none;
+}
+.tab-contents.active-tab{
+  display: block;
+}
+/*----------services----------*/
+#Services{
+  padding: 30px 0;
+}
+.services-list{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
+  margin-top: 50px;
+}
+.services-list{
+  background-color: #b89090;
+  padding: 20px;
+  border-radius: 20px;
+
+}
+
+
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <nav>
+          <h1>Gopi</h1>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">contact</a></li>
+          </ul>
+        </nav>
+        <div class="text">
+          <p>Network Engineer</p>
+          <h1>Hi, I'm <span>Gopi</span> <br>From Bengaluru</h1>
+        </div>
+      </div>
+    </div>
+<!--About-->
+    <div class="about">
+      <div class="content">
+        <div class="col-1">
+          <img src="/phots/IMG_0552.jpg" alt="">
+        </div>
+        <div class="col-2">
+          <h1 class="title"><span>A</span>bout <span>M</span>e</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam possimus nam odit nisi minus! Fugit aut maiores suscipit, itaque nisi repudiandae, rem dolore eum voluptatibus voluptates assumenda, ab expedita. Fuga?</p>
+          <div class="tab-titles">
+            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+            <p class="tab-links"onclick="opentab('experience')">Experience</p>
+            <p class="tab-links"onclick="opentab('education')">Education</p>
+          </div>
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li><span>TCP/IP Model </span> <br> Designing network infrastructure</li>
+                <li><span>Layer 2</span> <br> Configuring Layer 2 switchs</li>
+                <li><span>Support</span> <br>Customer Support</li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="experience">
+              <ul>
+                <li><span> 2022 - current</span> <br> Customer Support Excutive At One broadband Bengaluru</li>
+                <li><span>2020 - 2022</span> <br> Sale Excutive At HDFC Bank</li>
+            </div>
+            <div class="tab-contents" id="education">
+              <ul>
+                <li><span> 2013 </span> <br> SSLC</li>
+                <li><span>2014 - 2015</span> <br> PUC</li>
+                <li><span>2016 - 2019</span> <br>BA</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--------service-------->
+    <div id="Services">
+      <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+          <div>
+            <i class="fa-solid fa-server"></i>
+            <h2>Network Design</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim nobis placeat alias fugiat, odio labore similique ut excepturi delectus vel cumque est hic eum voluptas illum distinctio, ullam consequuntur. Reiciendis?</p>
+          </div>
+          <div>
+            <i class="fa-solid fa-network-wired"></i>
+            <h2>Network Design</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim nobis placeat alias fugiat, odio labore similique ut excepturi delectus vel cumque est hic eum voluptas illum distinctio, ullam consequuntur. Reiciendis?</p>
+          </div>
+          <div>
+            <i class="fa-solid fa-ethernet"></i>
+            <h2>Network Design</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim nobis placeat alias fugiat, odio labore similique ut excepturi delectus vel cumque est hic eum voluptas illum distinctio, ullam consequuntur. Reiciendis?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+
+      var tablinks = document.getElementsByClassName("tab-links");
+      var tabcontents = document.getElementsByClassName("tab-contents");
+
+      function opentab(tabname){
+      for(tablink of tablinks){
+        tablink.classList.remove("active-link");
+      }
+      for(tabcontent of tabcontents){ 
+        tabcontent.classList.remove("active-tab");
+      }
+      event.currentTarget.classList.add("active-link");
+      document.getElementById(tabname).classList.add("active-tab")
+    }
+
+    </script>
+  </body>
+</html>
