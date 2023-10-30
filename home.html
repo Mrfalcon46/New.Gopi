@@ -13,6 +13,9 @@
     margin: 0;
     padding: 0;
 }
+html{
+  scroll-behavior: smooth;
+}
 body{
     background-color: #ad939380;
     font-family: 'Poppins', sans-serif;
@@ -24,27 +27,32 @@ body{
     background-size: cover;
     background-position: center;
 }
-h1{
+.container nav h1{
     font-style: italic;
+    font-size: 50px;
+}
+.container span{
+  color: #ff0051;
+  text-decoration:underline;
 }
 .container{
-  padding: 10px 10%;
+  padding: 25px 10%;
 }
-nav{
+.container nav{
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-nav h1{
+.container nav h1{
   font-weight: 900;
   font-style: italic;
 }
-.container ul{
+.container nav ul{
   display: flex;
   list-style: none;
 }
-li a{
+.container nav li a{
   text-decoration: none;
   margin: 10px;
   color: black;
@@ -55,30 +63,30 @@ nav ul li a::after{
   content: '';
   width: 0;
   height: 3px;
-  background: #0f0f0f73;
+  background: #ff004f;
   position: absolute;
   left: 0;
   bottom: -6px;
-  transition: 0.5s;
+  transition: 0.4s;
 }
 nav ul li a:hover:after{
 width: 100%;
 }
-.text{
-  margin-top: 20%;
+.header-text{
+  margin-top: 30%;
   font-size: 20px;
 }
-.text h1{
+.header-text h1{
   font-size: 60px;
   margin-top: 20px;
 }
-.text h1 span{
+.header-text h1 span{
   color: #ff004f;
   font-style: italic;
   text-decoration: underline;
 }
 /*...........about......*/
-.about{
+#about{
   padding: 60px 0;
   color: #0f0f0f73;
 }
@@ -98,7 +106,7 @@ width: 100%;
 .col-2{
   flex-basis: 60%;
 }
-.about{
+#about{
   font-size: 30px;
   font-weight: 500;
   color: black;
@@ -158,39 +166,119 @@ width: 100%;
 .services-list{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
+  grid-gap: 40px;
   margin-top: 50px;
 }
-.services-list{
-  background-color: #b89090;
+.services-list div{
+  background-color: #ad93939f;
   padding: 20px;
+  font-size: 14px;
+  font-weight: 300;
   border-radius: 20px;
-
+  transition: transform 0.6s;
+}
+.services-list div i {
+  font-size: 40px;
+  margin: 10px;
+}
+.services-list div:hover{
+  background-color: #df4d7b59;
+  transform: translateY(-25px);
+}
+/*---------------small-----------------*/
+nav .fa-solid{
+  display: none;
 }
 
+@media only screen and ( max-width: 600px){
 
+
+  .header-text{
+    margin: 480px 0;
+  }
+  .header-text p {
+    display: none;
+  }
+  .header-text h1{
+    font-size: 50px;
+  }
+  nav .fa-solid{
+    display: block;
+    font-size: 25px;
+  }
+  .container nav h1{
+    margin-top: 5px;
+    margin-left: 1px;
+  }
+  .container nav ul{
+    background-color: #ff004f;
+    position: fixed;
+    top: 0;
+    right:-200px;
+    width: 200px;
+    height: 100vh;
+    padding-top: 40px;
+    padding-right: 1px;
+    transition: right, 0.6s;
+  }
+  .container nav ul {
+    display: block;
+    margin: 0px;
+  }
+  .container nav ul li{
+    margin: 40px;
+  }
+  .container nav ul li a{
+    color: white;
+    font-style: italic;
+    font-weight: 500;
+  }
+  nav ul .fa-solid{
+    position: absolute;
+    top: 30px;
+    left: 18px;
+    color: white;
+    font-weight: 800;
+  }
+  .col-1{
+    margin-top: -20px;
+  }
+  .col-2{
+    margin-top: 20px;
+    margin-left: 40px;
+  }
+  .tab-links{
+    font-size: 20px;
+  }
+  .col-2 p {
+    font-size: 18px;
+  }
+}
     </style>
   </head>
-  <body>
+  <body class="mobile">
     <div id="header">
       <div class="container">
         <nav>
-          <h1>Gopi</h1>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
+          <h1><span>G</span>opi</h1>
+          <ul id="sidemenu">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#Services">Services</a></li>
             <li><a href="#">Portfolio</a></li>
             <li><a href="#">contact</a></li>
+            <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
           </ul>
+          <i class="fa-solid fa-bars" onclick="openmenu()"></i>
         </nav>
-        <div class="text">
+        <div class="header-text">
           <p>Network Engineer</p>
           <h1>Hi, I'm <span>Gopi</span> <br>From Bengaluru</h1>
         </div>
       </div>
     </div>
 <!--About-->
-    <div class="about">
+    <div id="about">
       <div class="content">
         <div class="col-1">
           <img src="/phots/IMG_0552.jpg" alt="">
@@ -233,17 +321,17 @@ width: 100%;
         <div class="services-list">
           <div>
             <i class="fa-solid fa-server"></i>
-            <h2>Network Design</h2>
+            <h3>Network Design</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim nobis placeat alias fugiat, odio labore similique ut excepturi delectus vel cumque est hic eum voluptas illum distinctio, ullam consequuntur. Reiciendis?</p>
           </div>
           <div>
             <i class="fa-solid fa-network-wired"></i>
-            <h2>Network Design</h2>
+            <h3>Network Design</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim nobis placeat alias fugiat, odio labore similique ut excepturi delectus vel cumque est hic eum voluptas illum distinctio, ullam consequuntur. Reiciendis?</p>
           </div>
           <div>
             <i class="fa-solid fa-ethernet"></i>
-            <h2>Network Design</h2>
+            <h3>Network Design</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim nobis placeat alias fugiat, odio labore similique ut excepturi delectus vel cumque est hic eum voluptas illum distinctio, ullam consequuntur. Reiciendis?</p>
           </div>
         </div>
@@ -266,5 +354,17 @@ width: 100%;
     }
 
     </script>
-  </body>
+    <script>
+      var sidemenu = document.getElementById("sidemenu");
+
+      function openmenu(){
+        sidemenu.style.right = "0";
+      }
+      function closemenu(){
+        sidemenu.style.right = "-200px";
+      }
+
+
+    </script>
+  </body class="mobile">
 </html>
