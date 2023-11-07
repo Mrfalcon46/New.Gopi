@@ -189,10 +189,44 @@ width: 100%;
 nav .fa-solid{
   display: none;
 }
+/*--------contact--------*/
+.contact-left{
+  flex-basis: 35%;
+}
+.contact-right{
+  flex-basis: 65%;
+}
+.contact-left p{
+  margin-top: 30px;
+}
+.contact-left p i{
+  color: #ff004f;
+  font-size: 20px;
+  margin-right: 10px;
+}
+.social-icons{
+  margin-top: 15px;
+}
+.social-icons a{
+  text-decoration: none;
+  color: #000000f6;
+  font-size: 30px;
+  margin-right: 15px;
+  display: inline-block;
+  transition: 0.5s;
+}
+.social-icons a:hover{
+  color: #ff004f;
+  transform: translateY(-6px)
+}
+
 
 @media only screen and ( max-width: 600px){
-
-
+  #header{
+    align-items: center;
+    width: auto;
+    height: 896px;
+  }
   .header-text{
     margin: 480px 0;
   }
@@ -296,18 +330,19 @@ nav .fa-solid{
                 <li><span>TCP/IP Model </span> <br> Designing network infrastructure</li>
                 <li><span>Layer 2</span> <br> Configuring Layer 2 switchs</li>
                 <li><span>Support</span> <br>Customer Support</li>
+                <li><span>Freelancer</span> <br>HTML CSS </li>
               </ul>
             </div>
             <div class="tab-contents" id="experience">
-              <ul>
-                <li><span> 2022 - current</span> <br> Customer Support Excutive At One broadband Bengaluru</li>
-                <li><span>2020 - 2022</span> <br> Sale Excutive At HDFC Bank</li>
+              <ul>  
+                <li><span>2020 - 2022</span> <br> Sale Excutive At HDFC Bank.</li>
+                <li><span> 2022 - current</span> <br> Customer Support Excutive <br>At One broadband Bengaluru.</li>
             </div>
             <div class="tab-contents" id="education">
               <ul>
-                <li><span> 2013 </span> <br> SSLC</li>
-                <li><span>2014 - 2015</span> <br> PUC</li>
-                <li><span>2016 - 2019</span> <br>BA</li>
+                <li><span> 2013 </span> <br> SSLC </li>
+                <li><span>2014 - 2015</span> <br>PUC Karnataka Education Broad.</li>
+                <li><span>2016 - 2019</span> <br>Bachelor of Arts At Bangalore University.</li>
               </ul>
             </div>
           </div>
@@ -333,6 +368,32 @@ nav .fa-solid{
             <i class="fa-solid fa-ethernet"></i>
             <h3>Network Design</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim nobis placeat alias fugiat, odio labore similique ut excepturi delectus vel cumque est hic eum voluptas illum distinctio, ullam consequuntur. Reiciendis?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--------contact-------->
+    <div id="contact">
+      <div class="content">
+        <div class="row">
+          <div class="contact-left">
+            <h2 class="sub-title">Contact Me</h2>
+            <p><i class="fa-solid fa-paper-plane"></i> Gopal810506@gmail.com</p>
+            <p><i class="fa-solid fa-mobile"></i> 0123456789</p>
+            <div class="social-icons">
+              <a href="#"><i class="fa-solid fa-paper-plane"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+          <div class="contact-right">
+            <form action="">
+              <input type="text" name="Name" placeholder="Name" id="">
+              <input type="email" name="email" placeholder="email" id="">
+              <textarea name="Massege" id="" cols="30" rows="0"></textarea>
+              <button>submit</button>
+            </form>
           </div>
         </div>
       </div>
