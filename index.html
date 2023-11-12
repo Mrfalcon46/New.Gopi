@@ -335,10 +335,16 @@ form input, form textarea {
   .col-2 p {
     font-size: 18px;
   }
-  .contact-left, .contact-right{
-    flex-basis: 100%;
+  .row{
+    display: block;
+    margin-left: 51px;
   }
-  
+  .contact-right{
+    width: 80%;
+  }
+  .contact-left{
+    margin-top: -40px;
+  }
 }
     </style>
   </head>
@@ -349,9 +355,8 @@ form input, form textarea {
           <h1><span>G</span>opi</h1>
           <ul id="sidemenu">
             <li><a href="#header">Home</a></li>
-            <li><a href="#about">About</a></li>
             <li><a href="#Services">Services</a></li>
-            <li><a href="#">Portfolio</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#contact">contact</a></li>
             <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
           </ul>
@@ -381,7 +386,6 @@ form input, form textarea {
                 <li><span>TCP/IP Model </span> <br> Designing network infrastructure</li>
                 <li><span>Layer 2</span> <br> Configuring Layer 2 switchs</li>
                 <li><span>Support</span> <br>Customer Support</li>
-                <li><span>Freelancer</span> <br>HTML CSS </li>
               </ul>
             </div>
             <div class="tab-contents" id="experience">
