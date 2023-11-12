@@ -268,6 +268,13 @@ form input, form textarea {
 ;
   transform: translateY(-6px)
 }
+#msg{
+  display: flex;
+  font-weight: 600;
+  margin-top: -20px;
+  margin-bottom: 20px;
+  color: #ff004f;
+}
 
 
 @media only screen and ( max-width: 600px){
@@ -447,13 +454,14 @@ form input, form textarea {
             </div>
           </div>
           <div class="contact-right">
-            <form>
+            <form name="submit-to-google-sheet">
               <input type="text" name="Name" placeholder="Name" id="">
               <input type="email" name="email" placeholder="Email" id="">
               <textarea name="Massege" id="" rows="6" placeholder="Your Massege"></textarea>
               <br>
               <button>submit</button>
             </form>
+            <span id="msg">Massege sent Thank You</span>
           </div>
         </div>
       </div>
@@ -484,8 +492,24 @@ form input, form textarea {
       function closemenu(){
         sidemenu.style.right = "-200px";
       }
-
-
+    </script>
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbwHGeiPGylFH96JqIve7ZmT78vApRLCOHWgVb7sKMTgB4La6mrJoo-b9pyC0skcKpYLyg/exec'
+      const form = document.forms['submit-to-google-sheet']
+      const msg =document.getElementById("msg")
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+            msg.innerHTML = "Massege sent Thank You"
+            setTimeout(function(){
+              msg.innerHTML = ""
+            },4000)
+            form.reset()
+          })
+          .catch(error => console.error('Error!', error.message))
+      })
     </script>
   </body class="mobile">
 </html>
